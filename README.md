@@ -36,8 +36,8 @@ http://grid-grid.com
 - ユーザデータのバックアップは毎日深夜帯にバッチ処理は走るよう、自動化。
   - 当時はPHPMailerでメール送信で自動的にデータ転送を実施。
 - ツクログに掲載。  
-  GridGrid｜ツクログ - WEBサービスを無料でPRできるサービス
-  http://creators.eightbit.jp/service/item876.html
+  GridGrid｜ツクログ - WEBサービスを無料でPRできるサービス  
+  http://creators.eightbit.jp/service/item876.html  
 
 
 
