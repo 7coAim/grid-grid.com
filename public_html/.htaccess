@@ -1,0 +1,53 @@
+# インデックスファイル設定
+DirectoryIndex index.php .ht
+
+# タイムゾーン設定
+SetEnv TZ JST-9
+
+# ファイルアクセス制限
+<FilesMatch "\.(ini|phps|fla|psd|jpg|png|gif|jpeg|log|sh)$">
+SetEnvIf Referer "^http://grid-grid\.com" Pass
+SetEnvIf Referer "^http://www\.grid-grid\.com" Pass
+SetEnvIf Referer "^http://gridstar\.sakura\.ne\.jp" Pass
+SetEnvIf Referer "^http://www\.gridstar\.sakura\.ne\.jp" Pass
+#SetEnvIf Referer "^$" Pass
+order deny,allow
+deny from all
+allow from env=Pass
+</FilesMatch>
+
+#アドレス統一
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.grid-grid\.com
+RewriteRule (.*) http://grid-grid.com/ [R=301,L]
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^gridstar\.sakura\.ne\.jp
+RewriteRule (.*) http://grid-grid.com/ [R=301,L]
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.gridstar\.sakura\.ne\.jp
+RewriteRule (.*) http://grid-grid.com/ [R=301,L]
+
+#Errorページ設定
+ErrorDocument 400 https://twitter.com/7coAim
+ErrorDocument 401 https://twitter.com/7coAim
+ErrorDocument 402 https://twitter.com/7coAim
+ErrorDocument 403 https://twitter.com/7coAim
+ErrorDocument 404 https://twitter.com/7coAim
+ErrorDocument 405 https://twitter.com/7coAim
+ErrorDocument 406 https://twitter.com/7coAim
+ErrorDocument 407 https://twitter.com/7coAim
+ErrorDocument 408 https://twitter.com/7coAim
+ErrorDocument 409 https://twitter.com/7coAim
+ErrorDocument 410 https://twitter.com/7coAim
+ErrorDocument 411 https://twitter.com/7coAim
+ErrorDocument 412 https://twitter.com/7coAim
+ErrorDocument 413 https://twitter.com/7coAim
+ErrorDocument 414 https://twitter.com/7coAim
+ErrorDocument 500 https://twitter.com/7coAim
+ErrorDocument 501 https://twitter.com/7coAim
+ErrorDocument 502 https://twitter.com/7coAim
+ErrorDocument 503 https://twitter.com/7coAim
+ErrorDocument 504 https://twitter.com/7coAim
+ErrorDocument 505 https://twitter.com/7coAim
